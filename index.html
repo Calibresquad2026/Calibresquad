@@ -245,6 +245,37 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 }
 .contact-email:hover{color:var(--gold)}
 
+/* ---------- contact form ---------- */
+.contact-form{max-width:36rem;margin:0 auto;text-align:left}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.field{margin-bottom:1.1rem}
+.field label{
+  display:block;font-size:.66rem;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--steel);margin-bottom:.5rem;
+}
+.field input,.field textarea{
+  width:100%;font-family:inherit;font-size:.95rem;color:var(--navy);
+  background:#fff;border:1px solid var(--hair);border-radius:12px;
+  padding:.85rem 1rem;transition:border-color .4s var(--ease);
+}
+.field input::placeholder,.field textarea::placeholder{color:#A9B0C2}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field textarea{resize:vertical;min-height:9rem;line-height:1.65}
+.form-actions{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.form-actions .btn-primary{border:none;cursor:pointer;font-family:inherit}
+.form-actions .btn-primary[disabled]{opacity:.6;cursor:default}
+.form-note{font-size:.78rem;color:var(--steel)}
+.form-status{margin-top:1.1rem;font-size:.9rem;color:var(--steel)}
+.form-status.ok{color:var(--gold)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-done{
+  text-align:center;border:1px solid var(--gold);border-radius:16px;
+  padding:2.4rem 2rem;max-width:36rem;margin:0 auto;background:var(--paper-deep);
+}
+.form-done h3{font-family:'Marcellus',serif;font-weight:400;font-size:1.4rem;margin-bottom:.5rem}
+.form-done p{color:var(--steel);font-weight:300;margin:0 auto}
+@media (max-width:640px){.form-row{grid-template-columns:1fr}}
+
 /* ---------- footer ---------- */
 footer{
   border-top:1px solid var(--hair);
@@ -410,7 +441,28 @@ a.pill:hover{color:var(--navy);border-color:var(--navy)}
     <p class="eyebrow reveal" style="justify-content:center">Contact</p>
     <h2 id="contact-h" class="reveal">Let's talk about what you're building.</h2>
     <p class="reveal">Whether it's an engagement, a resource, or an idea for something digital — we'd like to hear about it.</p>
-    <a class="contact-email reveal" href="mailto:info@calibresquad.com.au">info@calibresquad.com.au</a>
+    <form class="contact-form reveal" id="contact-form" novalidate>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <div class="field">
+          <label for="cf-name">Your name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Jordan Blake">
+        </div>
+        <div class="field">
+          <label for="cf-email">Your email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com.au">
+        </div>
+      </div>
+      <div class="field">
+        <label for="cf-message">What can we help with?</label>
+        <textarea id="cf-message" name="message" required placeholder="Tell us about the engagement, the resource, or the idea — whatever you're working on."></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn-primary" type="submit">Send message <span class="dot" aria-hidden="true">↗</span></button>
+        <span class="form-note">Or write to info@calibresquad.com.au</span>
+      </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
     <div class="social-row reveal">
       <a href="https://x.com/calibresquad" target="_blank" rel="me noopener">X</a>
       <a href="https://www.instagram.com/calibresquad" target="_blank" rel="me noopener">Instagram</a>
@@ -447,6 +499,46 @@ a.pill:hover{color:var(--navy);border-color:var(--navy)}
   els.forEach(function(el, i){
     el.style.transitionDelay = Math.min(i%4*80, 240)+'ms';
     io.observe(el);
+  });
+})();
+
+/* Contact form → relay service → info.auramix2026@gmail.com. No backend:
+   the site is static, so the form posts JSON and swaps in a confirmation. */
+(function(){
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var status = document.getElementById('form-status');
+  var button = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var payload = {};
+    new FormData(form).forEach(function(v, k){ payload[k] = v; });
+    payload._subject = 'Calibre Squad — message from the website';
+    payload._captcha = 'false';
+
+    button.disabled = true;
+    button.firstChild.nodeValue = 'Sending ';
+    status.className = 'form-status';
+    status.textContent = '';
+
+    fetch('https://formsubmit.co/ajax/info.auramix2026@gmail.com', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(res){
+      if (!res.ok) throw new Error(res.status);
+      var done = document.createElement('div');
+      done.className = 'form-done';
+      done.innerHTML = '<h3>Message sent.</h3><p>Thank you — we read every enquiry and will reply shortly.</p>';
+      form.replaceWith(done);
+    }).catch(function(){
+      button.disabled = false;
+      button.firstChild.nodeValue = 'Send message ';
+      status.textContent = "That didn't go through. Please email info@calibresquad.com.au directly.";
+    });
   });
 })();
 </script>

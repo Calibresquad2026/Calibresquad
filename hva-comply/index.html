@@ -96,6 +96,29 @@ h2{font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.015em;line-height:1.2;m
 .price-strip ul{list-style:none;color:var(--dim);font-size:.92rem}
 .price-strip li{padding:.18rem 0}
 .price-strip li::before{content:"✓ ";color:var(--accent);font-weight:700}
+/* contact form */
+.contact-form{border:1px solid var(--border);border-radius:20px;background:var(--surface);padding:2.2rem 2rem;max-width:44rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:.5rem}
+.field input,.field textarea{
+  width:100%;font-family:inherit;font-size:.95rem;color:var(--text);
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:12px;padding:.8rem 1rem;transition:border-color .3s;
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(243,247,255,.32)}
+.field input:focus,.field textarea:focus{outline:none;border-color:rgba(183,255,0,.6)}
+.field textarea{resize:vertical;min-height:8.5rem;line-height:1.65}
+.form-actions{display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap}
+.form-actions .btn{border:none;cursor:pointer;font-family:inherit;font-size:.85rem}
+.form-actions .btn[disabled]{opacity:.6;cursor:default}
+.form-note{font-size:.78rem;color:var(--faint)}
+.form-status{margin-top:1.1rem;font-size:.9rem;color:var(--dim)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-done{border:1px solid rgba(183,255,0,.5);border-radius:20px;background:var(--surface);padding:2.6rem 2rem;max-width:44rem;text-align:center}
+.form-done h3{font-size:1.3rem;margin-bottom:.5rem}
+.form-done p{color:var(--dim);font-size:.95rem}
+@media (max-width:640px){.form-row{grid-template-columns:1fr}}
 /* final cta */
 .final{text-align:center;border-top:1px solid var(--border)}
 .final .lede{margin-bottom:2rem}
@@ -127,7 +150,7 @@ footer a:hover{color:var(--accent)}
       <a class="plain" href="#modules">Modules</a>
       <a class="plain" href="#driver">Driver app</a>
       <a class="plain" href="#pricing">Pricing</a>
-      <a class="btn btn-ghost" href="mailto:info.auramix2026@gmail.com?subject=HVA%20Comply%20demo">Book a demo</a>
+      <a class="btn btn-ghost" href="#contact">Book a demo</a>
       <a class="btn btn-solid" href="https://hva-comply.vercel.app/">Open the app</a>
     </div>
   </div>
@@ -223,12 +246,50 @@ footer a:hover{color:var(--accent)}
     </div>
   </section>
 
+  <section id="contact" aria-labelledby="contact-h">
+    <p class="kicker">Book a demo</p>
+    <h2 id="contact-h">Talk to us about your fleet</h2>
+    <p class="sub">Tell us how many vehicles you run and what's giving you trouble at audit time. We'll come back with a walkthrough tailored to your operation — no obligation.</p>
+    <form class="contact-form" id="contact-form" novalidate>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <div class="field">
+          <label for="cf-name">Your name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Jordan Blake">
+        </div>
+        <div class="field">
+          <label for="cf-company">Operator / company</label>
+          <input id="cf-company" name="company" type="text" autocomplete="organization" placeholder="Pilbara Freight">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="cf-email">Your email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com.au">
+        </div>
+        <div class="field">
+          <label for="cf-fleet">Fleet size</label>
+          <input id="cf-fleet" name="fleet_size" type="text" inputmode="numeric" placeholder="12 vehicles">
+        </div>
+      </div>
+      <div class="field">
+        <label for="cf-message">What can we help with?</label>
+        <textarea id="cf-message" name="message" required placeholder="Where the paperwork is hurting — fatigue, mass, maintenance, work diaries, an audit coming up…"></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-solid" type="submit">Send enquiry</button>
+        <span class="form-note">We reply from a WA business day, usually within one.</span>
+      </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
   <section class="final" aria-labelledby="final-h">
     <h2 id="final-h">Walk into your next audit prepared.</h2>
     <p class="lede">See what HVA Comply does — then create your account to go live with your own fleet.</p>
     <div class="cta-row">
       <a class="btn btn-solid" href="https://hva-comply.vercel.app/">Open the app</a>
-      <a class="btn btn-ghost" href="mailto:info.auramix2026@gmail.com?subject=HVA%20Comply%20demo">Book a demo</a>
+      <a class="btn btn-ghost" href="#contact">Book a demo</a>
     </div>
   </section>
 </main>
@@ -239,7 +300,7 @@ footer a:hover{color:var(--accent)}
       <div>
         <h4>HVA Comply</h4>
         <p style="max-width:22rem">Tools and insights for unprecedented fleet compliance. Feel free to get in touch and get a free quote.</p>
-        <p style="margin-top:.8rem"><a href="mailto:info.auramix2026@gmail.com">info.auramix2026@gmail.com</a><br>Head Office: Perth, WA, Australia</p>
+        <p style="margin-top:.8rem">info.auramix2026@gmail.com<br>Head Office: Perth, WA, Australia</p>
       </div>
       <div>
         <h4>Industries</h4>
@@ -272,7 +333,7 @@ footer a:hover{color:var(--accent)}
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="/hva-comply/support/">Support</a></li>
           <li><a href="/hva-comply/privacy/">Privacy</a></li>
-          <li><a href="mailto:info.auramix2026@gmail.com">Contact us</a></li>
+          <li><a href="#contact">Contact us</a></li>
         </ul>
       </div>
     </div>
@@ -291,6 +352,46 @@ footer a:hover{color:var(--accent)}
     </div>
   </div>
 </footer>
+<script>
+/* Demo enquiry form → relay service → info.auramix2026@gmail.com. The site is
+   static, so the form posts JSON and swaps itself for a confirmation. */
+(function(){
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var status = document.getElementById('form-status');
+  var button = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var payload = {};
+    new FormData(form).forEach(function(v, k){ payload[k] = v; });
+    payload._subject = 'HVA Comply — enquiry from the website';
+    payload._captcha = 'false';
+
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    status.textContent = '';
+
+    fetch('https://formsubmit.co/ajax/info.auramix2026@gmail.com', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(res){
+      if (!res.ok) throw new Error(res.status);
+      var done = document.createElement('div');
+      done.className = 'form-done';
+      done.innerHTML = '<h3>Enquiry sent.</h3><p>Thanks — we\'ll be in touch shortly with a walkthrough for your fleet.</p>';
+      form.replaceWith(done);
+    }).catch(function(){
+      button.disabled = false;
+      button.textContent = 'Send enquiry';
+      status.textContent = "That didn't go through. Please email info.auramix2026@gmail.com directly.";
+    });
+  });
+})();
+</script>
 <script data-goatcounter="https://calibresquad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
