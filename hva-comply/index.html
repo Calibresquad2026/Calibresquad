@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HVA Comply — WAHVA compliance for WA heavy-vehicle operators</title>
-<meta name="description" content="HVA Comply is a WAHVA management system for Western Australian heavy-vehicle operators — pre-starts, fatigue, work diaries and audit-ready evidence in one place. By Calibre Squad, Perth.">
+<meta name="description" content="HVA Comply is a WAHVA management system for Western Australian heavy-vehicle operators — pre-starts, fatigue, mass, maintenance, work diaries and audit-ready evidence in one place. By Calibre Squad, Perth.">
 <link rel="canonical" href="https://calibresquad.com.au/hva-comply/">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%23B7FF00"/><path d="M12 40V26a2 2 0 0 1 2-2h22v16zm26-10h7l7 6v4h-14zM20 46a4 4 0 1 0 0-.01M44 46a4 4 0 1 0 0-.01" fill="none" stroke="%23070B14" stroke-width="3.4" stroke-linejoin="round"/></svg>'>
 <meta name="theme-color" content="#070B14">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HVA Comply">
 <meta property="og:locale" content="en_AU">
-<meta property="og:title" content="HVA Comply — WAHVA compliance, from cab to office">
-<meta property="og:description" content="Pre-starts, fatigue, work diaries and audit-ready evidence in one place. Built for WAHVA Standards Rev 5.">
+<meta property="og:title" content="HVA Comply — Heavy vehicle compliance, without the paperwork">
+<meta property="og:description" content="Pre-starts, fatigue, mass, maintenance and incidents — captured once, evidenced forever, audit-ready always. Built for WAHVA Standards Rev 5.">
 <meta property="og:url" content="https://calibresquad.com.au/hva-comply/">
 <meta property="og:image" content="https://calibresquad.com.au/assets/og-crest.png">
 <meta name="twitter:card" content="summary">
@@ -47,6 +47,8 @@ nav{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.8);backdrop-filter
 .brand b{font-size:1.02rem;letter-spacing:.01em}
 .brand small{display:block;font-size:.58rem;letter-spacing:.22em;color:var(--faint);text-transform:uppercase;line-height:1.2}
 .nav-links{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.nav-links .plain{color:var(--dim);text-decoration:none;font-size:.85rem;font-weight:500;margin-right:.6rem}
+.nav-links .plain:hover{color:var(--accent)}
 .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.85rem;border-radius:999px;padding:.6rem 1.25rem;transition:filter .3s,transform .3s}
 .btn:active{transform:scale(.98)}
 .btn-ghost{color:var(--text);border:1px solid var(--border)}
@@ -60,33 +62,56 @@ nav{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.8);backdrop-filter
 .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow)}
 h1{font-size:clamp(2.2rem,5.6vw,3.6rem);line-height:1.12;letter-spacing:-.02em;font-weight:700;max-width:17em;margin:0 auto 1.4rem}
 h1 em{font-style:normal;color:var(--accent)}
-.lede{color:var(--dim);max-width:38rem;margin:0 auto 2.6rem;font-size:1.06rem}
+.lede{color:var(--dim);max-width:40rem;margin:0 auto 2.6rem;font-size:1.06rem}
 .cta-row{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
 /* sections */
 section{padding:4.5rem 0}
 .kicker{font-size:.7rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
 h2{font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.015em;line-height:1.2;margin-bottom:.8rem}
-.sub{color:var(--dim);max-width:36rem;margin-bottom:2.6rem}
+.sub{color:var(--dim);max-width:38rem;margin-bottom:2.6rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.7rem 1.6rem;transition:border-color .3s,transform .3s}
 .card:hover{border-color:rgba(183,255,0,.5);transform:translateY(-3px)}
 .card h3{font-size:1.05rem;margin-bottom:.5rem}
 .card p{color:var(--dim);font-size:.92rem}
 .card .n{display:inline-flex;width:34px;height:34px;border-radius:9px;background:rgba(183,255,0,.12);color:var(--accent);align-items:center;justify-content:center;font-weight:700;font-size:.9rem;margin-bottom:1rem}
-/* pricing strip */
+.card .tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:.55rem;vertical-align:baseline}
+/* driver checklist */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.check{list-style:none}
+.check li{padding:.5rem 0;color:var(--dim);font-size:.96rem}
+.check li::before{content:"✓";color:var(--accent);font-weight:700;margin-right:.7rem}
+.phone-mock{background:var(--surface);border:1px solid var(--border);border-radius:26px;padding:1.6rem;max-width:320px;margin:0 auto;width:100%}
+.phone-mock .ph-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1rem}
+.phone-mock .ph-h b{font-size:.95rem}
+.phone-mock .ph-h span{color:var(--accent);font-weight:700;font-size:.85rem}
+.ph-row{display:flex;align-items:center;gap:.7rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;margin-bottom:.55rem;font-size:.86rem;color:var(--dim)}
+.ph-row::before{content:"✓";color:var(--accent);font-weight:700}
+.ph-slide{margin-top:1rem;background:rgba(183,255,0,.12);border:1px solid rgba(183,255,0,.4);border-radius:999px;padding:.75rem;text-align:center;font-size:.85rem;font-weight:600;color:var(--accent)}
+/* pricing */
 .price-strip{border:1px solid var(--border);border-radius:20px;background:linear-gradient(140deg,rgba(183,255,0,.09),var(--surface) 45%);padding:2.6rem 2.2rem;display:flex;gap:2rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .price-strip .big{font-size:2.6rem;font-weight:700}
 .price-strip .big small{font-size:1rem;color:var(--dim);font-weight:400}
 .price-strip ul{list-style:none;color:var(--dim);font-size:.92rem}
 .price-strip li{padding:.18rem 0}
 .price-strip li::before{content:"✓ ";color:var(--accent);font-weight:700}
+/* final cta */
+.final{text-align:center;border-top:1px solid var(--border)}
+.final .lede{margin-bottom:2rem}
 /* footer */
-footer{border-top:1px solid var(--border);padding:2.6rem 0 3rem;color:var(--faint);font-size:.85rem}
-.foot-grid{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:center}
+footer{border-top:1px solid var(--border);padding:3rem 0;color:var(--faint);font-size:.85rem}
+.foot-cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.4rem}
+.foot-cols h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:.8rem}
+.foot-cols ul{list-style:none}
+.foot-cols li{padding:.22rem 0;color:var(--faint)}
 footer a{color:var(--dim);text-decoration:none}
 footer a:hover{color:var(--accent)}
+.foot-bar{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:1.6rem}
 .foot-links{display:flex;gap:1.4rem;flex-wrap:wrap}
-@media (max-width:640px){.nav-links .btn-ghost{display:none}section{padding:3.2rem 0}}
+@media (max-width:820px){.split{grid-template-columns:1fr}.foot-cols{grid-template-columns:1fr 1fr}}
+@media (max-width:960px){.nav-links .plain{display:none}}
+@media (max-width:640px){section{padding:3.2rem 0}}
 </style>
 </head>
 <body>
@@ -98,6 +123,10 @@ footer a:hover{color:var(--accent)}
       <span><b>HVA Comply</b><small>WAHVA Management System</small></span>
     </a>
     <div class="nav-links">
+      <a class="plain" href="#how">How it works</a>
+      <a class="plain" href="#modules">Modules</a>
+      <a class="plain" href="#driver">Driver app</a>
+      <a class="plain" href="#pricing">Pricing</a>
       <a class="btn btn-ghost" href="mailto:info.auramix2026@gmail.com?subject=HVA%20Comply%20demo">Book a demo</a>
       <a class="btn btn-solid" href="https://hva-comply.vercel.app/">Open the app</a>
     </div>
@@ -106,75 +135,159 @@ footer a:hover{color:var(--accent)}
 
 <header class="hero" id="top">
   <span class="pill">Built for Main Roads WA · WAHVA Standards Rev 5</span>
-  <h1>WAHVA compliance, <em>from cab to office</em>.</h1>
-  <p class="lede">HVA Comply puts every pre-start, fatigue declaration, work diary and piece of audit evidence in one system — entered once, filed against the right standard, ready the day the auditor calls.</p>
+  <h1>Heavy vehicle compliance, <em>without the paperwork</em>.</h1>
+  <p class="lede">HVA Comply wires your drivers' phones straight to your compliance dashboard. Pre-starts, fatigue, mass, maintenance and incidents — captured once, evidenced forever, audit-ready always.</p>
   <div class="cta-row">
-    <a class="btn btn-solid" href="https://hva-comply.vercel.app/">Open the app</a>
-    <a class="btn btn-ghost" href="mailto:info.auramix2026@gmail.com?subject=HVA%20Comply%20demo">Book a demo</a>
+    <a class="btn btn-solid" href="https://hva-comply.vercel.app/">Open Operator Dashboard</a>
+    <a class="btn btn-ghost" href="https://hva-comply.vercel.app/">Try the Driver App</a>
   </div>
 </header>
 
 <main class="shell">
-  <section aria-labelledby="driver-h">
+  <section id="how" aria-labelledby="how-h">
+    <p class="kicker">How it works</p>
+    <h2 id="how-h">One system, cab to office</h2>
+    <div class="grid">
+      <div class="card"><span class="tag">In the cab</span><h3>Drivers report in seconds</h3><p>Pre-starts, fatigue, fuel, faults and incidents — captured on the phone with a swipe, even offline.</p></div>
+      <div class="card"><span class="tag">In real time</span><h3>Everything syncs live</h3><p>Each submission streams straight to the operator dashboard — no spreadsheets, no double entry, no chasing paper.</p></div>
+      <div class="card"><span class="tag">At audit time</span><h3>Evidence builds itself</h3><p>Every record files against the right WAHVA standard automatically, ready to export and hand to your auditor.</p></div>
+    </div>
+  </section>
+
+  <section id="modules" aria-labelledby="modules-h">
+    <p class="kicker">The platform</p>
+    <h2 id="modules-h">Every WAHVA module, in one place</h2>
+    <p class="sub">Fatigue, maintenance, mass, dimension &amp; loading and audit readiness — with an AI assistant grounded in your fleet's live data.</p>
+    <div class="grid">
+      <div class="card"><h3><span class="dot" style="background:#F97316"></span>Fatigue Management</h3><p>Live work/rest tracking, fitness-for-duty declarations and breach alerts before a driver runs over.</p></div>
+      <div class="card"><h3><span class="dot" style="background:#F59E0B"></span>Maintenance</h3><p>A/B/C schedules, daily pre-starts and fault-to-repair tracking across the fleet.</p></div>
+      <div class="card"><h3><span class="dot" style="background:#34D399"></span>Mass Management</h3><p>CML &amp; AMMS compliance with live axle loads and trip weight logs.</p></div>
+      <div class="card"><h3><span class="dot" style="background:#A78BFA"></span>Dimension &amp; Load</h3><p>RAV envelope checks, permit detection and load-restraint verification per trip.</p></div>
+      <div class="card"><h3><span class="dot" style="background:#5AA9FF"></span>Audit Readiness</h3><p>Every WAHVA standard scored, evidenced and export-ready — walk in prepared.</p></div>
+      <div class="card"><h3><span class="dot" style="background:#C7FF3D"></span>AI Compliance Assistant</h3><p>Ask anything about the standards and get answers grounded in your fleet's live data.</p></div>
+    </div>
+  </section>
+
+  <section id="driver" aria-labelledby="driver-h">
     <p class="kicker">The driver app</p>
     <h2 id="driver-h">An app drivers will actually use</h2>
-    <p class="sub">Everything a driver owes the office happens in a few swipes from the cab — nothing left on paper to lose.</p>
-    <div class="grid">
-      <div class="card"><span class="n">01</span><h3>Swipe-to-submit pre-starts</h3><p>Pre-start inspections, fatigue and fuel declarations submitted from the phone before the wheels turn.</p></div>
-      <div class="card"><span class="n">02</span><h3>Live shift monitor</h3><p>Work and rest tracked in real time, with rest-break alerts raised before a fatigue limit is crossed — not a week later in a logbook.</p></div>
-      <div class="card"><span class="n">03</span><h3>Faults &amp; incidents with photos</h3><p>Defects and incidents reported straight from the cab, with photos, shared to the office in one tap.</p></div>
-      <div class="card"><span class="n">04</span><h3>Digital work diary</h3><p>Signature sign-off, PDF export, and every record filed against the WAHVA standard it evidences.</p></div>
+    <div class="split">
+      <ul class="check">
+        <li>Swipe-to-submit pre-starts, fatigue and fuel declarations</li>
+        <li>Live shift monitor with rest-break alerts</li>
+        <li>Fault &amp; incident reports with photos, straight from the cab</li>
+        <li>Work diary with signature sign-off and PDF export</li>
+        <li>Every record shareable to the office in one tap</li>
+        <li>AMMS and load compliance at the click of a button</li>
+        <li>CoR, training and policy compliance in one app</li>
+      </ul>
+      <div class="phone-mock" role="img" aria-label="Driver app daily activities screen">
+        <div class="ph-h"><b>Daily Activities</b><span>4 / 4</span></div>
+        <div class="ph-row">Pre-Start Inspection</div>
+        <div class="ph-row">Fatigue Declaration</div>
+        <div class="ph-row">Fuel Declaration</div>
+        <div class="ph-row">Daily Work Diary</div>
+        <div class="ph-slide">Slide to clock on →</div>
+      </div>
     </div>
   </section>
 
-  <section aria-labelledby="modules-h">
-    <p class="kicker">The platform</p>
-    <h2 id="modules-h">All five WAHVA modules, one system</h2>
-    <p class="sub">Fatigue, mass, maintenance, dimension &amp; loading, and training — with the evidence trail your accreditation depends on.</p>
+  <section aria-labelledby="why-h">
+    <p class="kicker">Why operators switch</p>
+    <h2 id="why-h">Built for the day of the audit</h2>
+    <p class="sub">Designed around WAHVA Standards Rev 5 and the way WA fleets actually run.</p>
     <div class="grid">
-      <div class="card"><h3>Vehicle &amp; asset management</h3><p>AMMS maintenance schedules, defect tracking and service history per vehicle.</p></div>
-      <div class="card"><h3>Fatigue management</h3><p>Rosters, declarations and breach alerts aligned to WAHVA fatigue standards.</p></div>
-      <div class="card"><h3>Mass, dimension &amp; loading</h3><p>Load compliance checks at the click of a button, recorded per movement.</p></div>
-      <div class="card"><h3>Training &amp; CoR</h3><p>Chain-of-responsibility, training records and policy acknowledgements in one register.</p></div>
-      <div class="card"><h3>Documents &amp; reporting</h3><p>Audit-ready evidence exports — the whole trail, filed and dated.</p></div>
-      <div class="card"><h3>AI compliance assistant</h3><p>Ask questions of your own compliance data and standards, in plain language.</p></div>
+      <div class="card"><h3>Audit-ready, every day</h3><p>Every pre-start, declaration and sign-off is filed against the WAHVA standard it evidences the moment it's submitted — so audit prep is a search, not a scramble.</p></div>
+      <div class="card"><h3>Paperwork that leaves the cab</h3><p>Drivers swipe to clock on, swipe for the pre-start, and share records to the office in one tap. Nothing lives on paper that can be lost or backdated.</p></div>
+      <div class="card"><h3>Fatigue caught before the breach</h3><p>The live shift monitor tracks work and rest in real time and raises the alert before a driver crosses the limit — not a week later in a logbook.</p></div>
     </div>
   </section>
 
-  <section aria-labelledby="pricing-h">
+  <section id="pricing" aria-labelledby="pricing-h">
     <p class="kicker">Pricing</p>
-    <h2 id="pricing-h">Everything included, per driver</h2>
+    <h2 id="pricing-h">Simple, per driver</h2>
     <div class="price-strip">
       <div>
         <div class="big">$30 <small>/ driver / month</small></div>
         <p style="color:var(--dim);font-size:.9rem;margin-top:.4rem">Annual billing: two months free · Cancel anytime</p>
       </div>
       <ul>
-        <li>All five WAHVA modules</li>
+        <li>All five WAHVA modules included</li>
+        <li>Unlimited drivers &amp; users</li>
         <li>Driver mobile app for every operator</li>
         <li>AI compliance assistant</li>
         <li>Audit-ready evidence exports</li>
         <li>Priority WA-based support</li>
       </ul>
-      <a class="btn btn-solid" href="https://hva-comply.vercel.app/">Get started</a>
+      <a class="btn btn-solid" href="https://hva-comply.vercel.app/">Sign up</a>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="final-h">
+    <h2 id="final-h">Walk into your next audit prepared.</h2>
+    <p class="lede">See what HVA Comply does — then create your account to go live with your own fleet.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="https://hva-comply.vercel.app/">Open the app</a>
+      <a class="btn btn-ghost" href="mailto:info.auramix2026@gmail.com?subject=HVA%20Comply%20demo">Book a demo</a>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="shell foot-grid">
-    <span>© 2026 <a href="https://calibresquad.com.au">Calibre Squad</a> · HVA Comply · Perth, WA</span>
-    <div class="foot-links">
-      <a href="/hva-comply/privacy/">Privacy</a>
-      <a href="/hva-comply/support/">Support</a>
-      <a href="mailto:info.auramix2026@gmail.com">Contact</a>
-      <a href="https://x.com/calibresquad" target="_blank" rel="me noopener">X</a>
-      <a href="https://www.instagram.com/calibresquad" target="_blank" rel="me noopener">Instagram</a>
-      <a href="https://www.reddit.com/user/Calibresquad" target="_blank" rel="me noopener">Reddit</a>
-      <!-- Uncomment when these accounts exist:
-      <a href="https://www.youtube.com/@calibresquad" target="_blank" rel="me noopener">YouTube</a>
-      <a href="https://www.linkedin.com/company/calibre-squad" target="_blank" rel="me noopener">LinkedIn</a>
-      -->
+  <div class="shell">
+    <div class="foot-cols">
+      <div>
+        <h4>HVA Comply</h4>
+        <p style="max-width:22rem">Tools and insights for unprecedented fleet compliance. Feel free to get in touch and get a free quote.</p>
+        <p style="margin-top:.8rem"><a href="mailto:info.auramix2026@gmail.com">info.auramix2026@gmail.com</a><br>Head Office: Perth, WA, Australia</p>
+      </div>
+      <div>
+        <h4>Industries</h4>
+        <ul>
+          <li>Transportation &amp; Logistics</li>
+          <li>Construction &amp; Mining</li>
+          <li>Waste Management</li>
+          <li>Forestry &amp; Agriculture</li>
+          <li>Passenger Transport</li>
+          <li>Rental Vehicles</li>
+          <li>Trade &amp; Services</li>
+          <li>Council &amp; Government</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li>Digital Work Diary</li>
+          <li>Vehicle &amp; Asset Management</li>
+          <li>Fuel &amp; Expense Analytics</li>
+          <li>Mass / Maintenance / Fatigue</li>
+          <li>Faults &amp; Incidents Management</li>
+          <li>Drivers &amp; Job Assignment</li>
+          <li>Documents &amp; Reporting</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help &amp; Support</h4>
+        <ul>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="/hva-comply/support/">Support</a></li>
+          <li><a href="/hva-comply/privacy/">Privacy</a></li>
+          <li><a href="mailto:info.auramix2026@gmail.com">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 <a href="https://calibresquad.com.au">Calibre Squad</a> · HVA Comply · Perth, WA</span>
+      <div class="foot-links">
+        <a href="https://hva-comply.vercel.app/">Log in</a>
+        <a href="https://x.com/calibresquad" target="_blank" rel="me noopener">X</a>
+        <a href="https://www.instagram.com/calibresquad" target="_blank" rel="me noopener">Instagram</a>
+        <a href="https://www.reddit.com/user/Calibresquad" target="_blank" rel="me noopener">Reddit</a>
+        <!-- Uncomment when these accounts exist:
+        <a href="https://www.youtube.com/@calibresquad" target="_blank" rel="me noopener">YouTube</a>
+        <a href="https://www.linkedin.com/company/calibre-squad" target="_blank" rel="me noopener">LinkedIn</a>
+        -->
+      </div>
     </div>
   </div>
 </footer>
