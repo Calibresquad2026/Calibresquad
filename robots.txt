@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calibresquad.com.au/sitemap.xml
