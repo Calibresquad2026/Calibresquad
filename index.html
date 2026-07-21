@@ -502,7 +502,7 @@ a.pill:hover{color:var(--navy);border-color:var(--navy)}
   });
 })();
 
-/* Contact form → relay service → info.auramix2026@gmail.com. No backend:
+/* Contact form → relay service → info@calibresquad.com.au. No backend:
    the site is static, so the form posts JSON and swaps in a confirmation. */
 (function(){
   var form = document.getElementById('contact-form');
@@ -524,7 +524,7 @@ a.pill:hover{color:var(--navy);border-color:var(--navy)}
     status.className = 'form-status';
     status.textContent = '';
 
-    fetch('https://formsubmit.co/ajax/info.auramix2026@gmail.com', {
+    fetch('https://formsubmit.co/ajax/info@calibresquad.com.au', {
       method: 'POST',
       headers: {'Content-Type':'application/json', 'Accept':'application/json'},
       body: JSON.stringify(payload)
