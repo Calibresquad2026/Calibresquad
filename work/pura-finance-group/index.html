@@ -79,6 +79,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--ft);
 @media(max-width:860px){.row{grid-template-columns:1fr;gap:1.4rem}.row > .label{padding-top:0}}
 
 .rule{border:0;border-top:1px solid var(--line);margin:0}
+section[id]{scroll-margin-top:5.5rem}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 section{padding-block:clamp(4.5rem,9vw,9.5rem);transition:background .5s ease,color .5s ease}
 section.tight{padding-block:clamp(3.5rem,6vw,6rem)}
 .tint{background:var(--paper-2)}
