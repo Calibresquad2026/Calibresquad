@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pura Finance Group &mdash; case study &mdash; Calibre Squad</title>
+<meta name="description" content="A Perth finance brokerage asked for website changes. We found a placeholder credit licence number, fabricated statistics and a contact form quietly discarding enquiries. How we cleared the exposure and rebuilt.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="canonical" href="https://calibresquad.com.au/work/pura-finance-group/">
+<meta name="theme-color" content="#FAF8F2">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calibre Squad">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Pura Finance Group &mdash; case study &mdash; Calibre Squad">
+<meta property="og:description" content="A Perth finance brokerage asked for website changes. We found a placeholder credit licence number, fabricated statistics and a contact form quietly discarding enquiries. How we cleared the exposure and rebuilt.">
+<meta property="og:url" content="https://calibresquad.com.au/work/pura-finance-group/">
+<meta property="og:image" content="https://calibresquad.com.au/assets/og-crest.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@calibresquad">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#152040;
+  --ink:#0D1428;
+  --paper:#FAF8F2;
+  --paper-deep:#F3EFE4;
+  --gold:#A8873B;
+  --gold-soft:#C4A85E;
+  --steel:#66708A;
+  --hair:rgba(21,32,64,.14);
+  --hair-light:rgba(250,248,242,.16);
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:400;
+  background:var(--paper);
+  color:var(--navy);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--navy);color:var(--paper)}
+
+/* ---------- floating nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:40;
+  display:flex;justify-content:center;
+  padding:1.25rem 1rem 0;
+  pointer-events:none;
+}
+.nav-pill{
+  pointer-events:auto;
+  display:flex;align-items:center;gap:1.75rem;
+  background:rgba(250,248,242,.82);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--hair);
+  border-radius:999px;
+  padding:.55rem .65rem .55rem 1.15rem;
+  box-shadow:0 18px 50px -24px rgba(13,20,40,.35);
+}
+.nav-brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--navy)}
+.nav-brand img{width:30px;height:30px}
+.nav-brand span{
+  font-family:'Marcellus',serif;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;
+  white-space:nowrap;
+}
+.nav-links{display:flex;gap:1.4rem;align-items:center}
+.nav-links a{
+  text-decoration:none;color:var(--steel);font-size:.8rem;font-weight:500;
+  letter-spacing:.06em;transition:color .4s var(--ease);
+}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--navy)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--navy);color:var(--paper);text-decoration:none;
+  border-radius:999px;padding:.55rem .6rem .55rem 1.1rem;
+  font-size:.8rem;font-weight:600;letter-spacing:.04em;
+  transition:transform .5s var(--ease),background .5s var(--ease);
+}
+.nav-cta .dot{
+  width:26px;height:26px;border-radius:999px;background:rgba(250,248,242,.14);
+  display:flex;align-items:center;justify-content:center;font-size:.75rem;
+  transition:transform .5s var(--ease);
+}
+.nav-cta:hover{background:var(--ink)}
+.nav-cta:hover .dot{transform:translate(2px,-1px)}
+.nav-cta:active{transform:scale(.98)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100dvh;
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  align-items:center;gap:3rem;
+  max-width:1180px;margin:0 auto;
+  padding:9rem 2rem 5rem;
+  position:relative;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.68rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.6rem;
+}
+.eyebrow::before{content:"";display:block;width:2.2rem;height:1px;background:var(--gold)}
+.hero h1{
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(2.6rem,5.4vw,4.4rem);
+  line-height:1.12;letter-spacing:.01em;
+  margin-bottom:1.6rem;
+}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lede{
+  font-size:1.05rem;font-weight:300;color:var(--steel);
+  max-width:34rem;margin-bottom:2.4rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.7rem;
+  background:var(--navy);color:var(--paper);text-decoration:none;
+  border-radius:999px;padding:.85rem .7rem .85rem 1.5rem;
+  font-size:.88rem;font-weight:600;letter-spacing:.03em;
+  transition:transform .5s var(--ease),background .5s var(--ease);
+}
+.btn-primary .dot{
+  width:32px;height:32px;border-radius:999px;background:rgba(250,248,242,.14);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .5s var(--ease);
+}
+.btn-primary:hover{background:var(--ink)}
+.btn-primary:hover .dot{transform:translate(2px,-2px) scale(1.05)}
+.btn-primary:active{transform:scale(.98)}
+.btn-ghost{
+  text-decoration:none;color:var(--navy);font-size:.88rem;font-weight:500;
+  border-bottom:1px solid var(--hair);padding-bottom:.15rem;
+  transition:border-color .4s var(--ease);
+}
+.btn-ghost:hover{border-color:var(--gold)}
+.hero-seal{
+  position:relative;display:flex;align-items:center;justify-content:center;
+}
+.hero-seal img{
+  width:min(100%,420px);height:auto;
+  filter:drop-shadow(0 30px 60px rgba(13,20,40,.18));
+}
+.hero-seal::after{
+  content:"";position:absolute;inset:-12%;z-index:-1;border-radius:50%;
+  background:radial-gradient(circle at 50% 45%, rgba(168,135,59,.12), transparent 62%);
+}
+
+/* ---------- capabilities ledger ---------- */
+.section{max-width:1180px;margin:0 auto;padding:6.5rem 2rem}
+.section-head{max-width:40rem;margin-bottom:4rem}
+.section-head h2{
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.2;margin-bottom:1rem;
+}
+.section-head p{color:var(--steel);font-weight:300}
+.ledger{border-top:1px solid var(--hair)}
+.ledger-row{
+  display:grid;grid-template-columns:minmax(0,3fr) minmax(0,6fr) minmax(0,3fr);
+  gap:2rem;align-items:baseline;
+  padding:2.6rem 0;border-bottom:1px solid var(--hair);
+}
+.ledger-row .tag{
+  font-size:.68rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);
+}
+.ledger-row h3{
+  font-family:'Marcellus',serif;font-weight:400;font-size:1.55rem;line-height:1.3;margin-bottom:.6rem;
+}
+.ledger-row p{color:var(--steel);font-weight:300;font-size:.95rem;max-width:32rem}
+.ledger-row .status{
+  justify-self:end;font-size:.72rem;font-weight:500;letter-spacing:.08em;color:var(--steel);
+  text-align:right;
+}
+.status .pill{
+  display:inline-block;border:1px solid var(--gold);color:var(--gold);
+  border-radius:999px;padding:.28rem .8rem;font-size:.66rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+}
+
+/* ---------- about band ---------- */
+.band{
+  background:var(--navy);color:var(--paper);
+  position:relative;overflow:hidden;
+}
+.band-inner{
+  max-width:1180px;margin:0 auto;padding:7rem 2rem;
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:3rem;align-items:center;
+  position:relative;z-index:1;
+}
+.band .eyebrow{color:var(--gold-soft)}
+.band .eyebrow::before{background:var(--gold-soft)}
+.band h2{
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.25;margin-bottom:1.4rem;
+}
+.band p{color:rgba(250,248,242,.72);font-weight:300;max-width:36rem}
+.band-watermark{
+  position:absolute;right:-8%;top:50%;transform:translateY(-50%);
+  width:min(52vw,560px);opacity:.07;pointer-events:none;
+}
+.band-facts{display:grid;gap:0;border-top:1px solid var(--hair-light)}
+.fact{padding:1.4rem 0;border-bottom:1px solid var(--hair-light)}
+.fact .k{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:.3rem}
+.fact .v{font-family:'Marcellus',serif;font-size:1.15rem}
+
+/* ---------- contact ---------- */
+.contact{max-width:1180px;margin:0 auto;padding:7rem 2rem 4rem;text-align:center}
+.contact h2{
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.15;margin-bottom:1.2rem;
+}
+.contact p{color:var(--steel);font-weight:300;max-width:30rem;margin:0 auto 2.4rem}
+.contact-email{
+  font-family:'Marcellus',serif;font-size:clamp(1.15rem,2.4vw,1.6rem);
+  color:var(--navy);text-decoration:none;
+  border-bottom:1px solid var(--gold);padding-bottom:.2rem;
+  transition:color .4s var(--ease);
+}
+.contact-email:hover{color:var(--gold)}
+
+/* ---------- contact form ---------- */
+.contact-form{max-width:36rem;margin:0 auto;text-align:left}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.field{margin-bottom:1.1rem}
+.field label{
+  display:block;font-size:.66rem;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--steel);margin-bottom:.5rem;
+}
+.field input,.field textarea{
+  width:100%;font-family:inherit;font-size:.95rem;color:var(--navy);
+  background:#fff;border:1px solid var(--hair);border-radius:12px;
+  padding:.85rem 1rem;transition:border-color .4s var(--ease);
+}
+.field input::placeholder,.field textarea::placeholder{color:#A9B0C2}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field textarea{resize:vertical;min-height:9rem;line-height:1.65}
+.form-actions{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.form-actions .btn-primary{border:none;cursor:pointer;font-family:inherit}
+.form-actions .btn-primary[disabled]{opacity:.6;cursor:default}
+.form-note{font-size:.78rem;color:var(--steel)}
+.form-status{margin-top:1.1rem;font-size:.9rem;color:var(--steel)}
+.form-status.ok{color:var(--gold)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-done{
+  text-align:center;border:1px solid var(--gold);border-radius:16px;
+  padding:2.4rem 2rem;max-width:36rem;margin:0 auto;background:var(--paper-deep);
+}
+.form-done h3{font-family:'Marcellus',serif;font-weight:400;font-size:1.4rem;margin-bottom:.5rem}
+.form-done p{color:var(--steel);font-weight:300;margin:0 auto}
+@media (max-width:640px){.form-row{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--hair);
+  max-width:1180px;margin:0 auto;padding:2rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+}
+footer .foot-brand{display:flex;align-items:center;gap:.6rem}
+footer .foot-brand img{width:26px;height:26px;opacity:.85}
+footer span{font-size:.75rem;color:var(--steel);letter-spacing:.04em}
+
+/* ---------- reveal motion ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn-primary,.nav-cta,.dot{transition:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding:8rem 1.25rem 4rem;gap:2.5rem;min-height:auto}
+  .hero-seal{order:-1}
+  .hero-seal img{width:min(58vw,260px)}
+  .band-inner{grid-template-columns:1fr;padding:5rem 1.25rem}
+  .ledger-row{grid-template-columns:1fr;gap:.6rem;padding:2.1rem 0}
+  .ledger-row .status{justify-self:start;text-align:left}
+  .section{padding:4.5rem 1.25rem}
+  .contact{padding:5rem 1.25rem 3rem}
+  .nav-links{display:none}
+}
+/* ---------- apps grid ---------- */
+.apps-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.app-card{
+  display:flex;flex-direction:column;gap:.9rem;
+  border:1px solid var(--hair);border-radius:20px;
+  padding:2.3rem 2.2rem;background:rgba(243,239,228,.5);
+  text-decoration:none;color:var(--navy);
+  transition:border-color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);
+}
+.app-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 24px 60px -30px rgba(13,20,40,.35)}
+.app-card-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.app-card h3{font-family:'Marcellus',serif;font-weight:400;font-size:1.7rem;line-height:1.25}
+.app-card p{color:var(--steel);font-weight:300;font-size:.95rem}
+.app-link{margin-top:auto;padding-top:.6rem;font-size:.85rem;font-weight:600;letter-spacing:.04em;color:var(--gold)}
+.app-card:hover .app-link{color:var(--navy)}
+a.pill{text-decoration:none;transition:color .4s var(--ease),border-color .4s var(--ease)}
+a.pill:hover{color:var(--navy);border-color:var(--navy)}
+/* ---------- social row ---------- */
+.social-row{margin-top:2.6rem;display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap}
+.social-row a{
+  font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--steel);text-decoration:none;transition:color .4s var(--ease);
+}
+.social-row a:hover{color:var(--gold)}
+@media (max-width:860px){.apps-grid{grid-template-columns:1fr}}
+
+/* ---------- work / case study ---------- */
+.crumb{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:1.6rem}
+.crumb a{color:var(--steel);text-decoration:none;border-bottom:1px solid var(--hair)}
+.crumb a:hover{color:var(--navy)}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:1.6rem}
+.work-card{display:flex;flex-direction:column;gap:.9rem;border:1px solid var(--hair);
+  border-radius:2px;padding:2rem 1.8rem;background:#fff;transition:border-color .4s var(--ease),transform .4s var(--ease)}
+.work-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.work-card h3{font-family:'Marcellus',serif;font-size:1.35rem;font-weight:400;margin:0}
+.work-card p{font-size:.92rem;font-weight:300;color:var(--steel);margin:0;line-height:1.65}
+.work-card .app-link{margin-top:auto;padding-top:.8rem}
+.work-meta{display:flex;gap:.5rem;flex-wrap:wrap}
+.finding{border-top:1px solid var(--hair);padding:1.15rem 0;display:grid;
+  grid-template-columns:1.6rem 1fr;gap:0 1rem;align-items:start}
+.finding:last-child{border-bottom:1px solid var(--hair)}
+.finding .n{font-size:.7rem;letter-spacing:.1em;color:var(--gold);padding-top:.28rem}
+.finding b{display:block;font-weight:500;font-size:.98rem;margin-bottom:.28rem}
+.finding span.d{font-size:.88rem;font-weight:300;color:var(--steel);line-height:1.6}
+.phase{border-left:1px solid var(--hair);padding:0 0 2.2rem 1.9rem;position:relative}
+.phase:last-child{padding-bottom:0}
+.phase::before{content:"";position:absolute;left:-4.5px;top:.45rem;width:8px;height:8px;
+  border-radius:50%;background:var(--gold)}
+.phase h3{font-family:'Marcellus',serif;font-weight:400;font-size:1.2rem;margin:0 0 .5rem}
+.phase p{font-size:.93rem;font-weight:300;color:var(--steel);line-height:1.7;margin:0}
+.phase .when{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+.quote{border-left:2px solid var(--gold);padding:.2rem 0 .2rem 1.8rem;margin:0}
+.quote p{font-family:'Marcellus',serif;font-size:1.35rem;line-height:1.5;font-weight:400;margin:0 0 1rem}
+.quote cite{font-style:normal;font-size:.82rem;letter-spacing:.06em;color:var(--steel)}
+.prose p{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin:0 0 1.15rem;max-width:38rem}
+.prose p:last-child{margin-bottom:0}
+.prose strong{font-weight:500}
+@media(max-width:640px){.phase{padding-left:1.4rem}}
+</style>
+</head>
+<body id="top">
+<nav class="nav" aria-label="Main">
+  <div class="nav-pill">
+    <a class="nav-brand" href="/" aria-label="Calibre Squad home">
+      <img src="/assets/crest.webp" alt="" width="30" height="30">
+      <span>Calibre Squad</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#capabilities">What we do</a>
+      <a href="/work/">Work</a>
+      <a href="/#apps">Apps</a>
+      <a href="/#about">About</a>
+    </div>
+    <a class="nav-cta" href="/#contact">Get in touch <span class="dot" aria-hidden="true">&#8599;</span></a>
+  </div>
+</nav>
+
+<main>
+<header class="hero" style="padding-block:9rem 4rem">
+  <p class="crumb"><a href="/work/">Work</a> &nbsp;/&nbsp; Pura Finance Group</p>
+  <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Case study &middot; Financial services</p>
+  <h1>A compliance problem wearing a website&rsquo;s clothes.</h1>
+  <p class="lede">Pura Finance Group arranges asset, equipment and commercial finance from Perth. They asked us to make some changes to their website. Within an hour of reading the live pages it was clear the changes were not the point.</p>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> The brief</p>
+    <h2>The site had been inherited, not chosen.</h2>
+  </div>
+  <div class="prose">
+    <p>The business had commissioned a website from a previous developer and been handed the keys without the knowledge that comes with them. What they had was a purchased page-builder template that had never been fully de-templated &mdash; the demo content was still in place, underneath a coat of paint.</p>
+    <p>That is a common enough story. What made this one urgent is that Pura Finance Group is a <strong>credit representative operating under an Australian Credit Licence</strong>. Several of the things sitting on that site were not cosmetic problems. They were representations a licensee has to be able to stand behind.</p>
+    <p>So the first job was not design. It was working out what had to come off the site that day.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-deep)">
+  <div class="section-head">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> The audit</p>
+    <h2>What was actually on the site.</h2>
+    <p class="lede">Every item below was verified against the live pages before anything was touched.</p>
+  </div>
+  <div>
+    <div class="finding"><span class="n">01</span><div><b>Australian Credit Licence XXXXX</b><span class="d">A placeholder sat where the licence number belongs, in the footer of every page. For a credit representative this is a disclosure failure, not a typo.</span></div></div>
+    <div class="finding"><span class="n">02</span><div><b>Performance claims that could not be substantiated</b><span class="d">99% approval. 8,900 happy customers. $90K in daily payments. A 99.9% success rate guarantee. All of it template filler, all of it live on a regulated business.</span></div></div>
+    <div class="finding"><span class="n">03</span><div><b>Three testimonials that were never real</b><span class="d">Different names, the same job title, stock avatars. Demo content shipped with the template and never replaced.</span></div></div>
+    <div class="finding"><span class="n">04</span><div><b>Another company&rsquo;s name in the service copy</b><span class="d">The template vendor&rsquo;s brand appeared twice in the homepage copy, describing services as though it were them.</span></div></div>
+    <div class="finding"><span class="n">05</span><div><b>Lorem ipsum on three homepage cards</b><span class="d">Placeholder Latin sitting where each service description should have been.</span></div></div>
+    <div class="finding"><span class="n">06</span><div><b>A contact form that delivered nothing</b><span class="d">It reported success on every submission. The messages were being accepted and silently discarded. Enquiries had been going missing since launch.</span></div></div>
+    <div class="finding"><span class="n">07</span><div><b>No Credit Guide, complaints process or privacy policy</b><span class="d">Three documents a credit representative is expected to make available. None were published.</span></div></div>
+    <div class="finding"><span class="n">08</span><div><b>No H1 headings and no meta descriptions, anywhere</b><span class="d">Across every page checked. Google had almost nothing to work with.</span></div></div>
+    <div class="finding"><span class="n">09</span><div><b>Not one clickable phone number or email address</b><span class="d">On a business where most traffic arrives on a phone, the number could not be tapped to dial.</span></div></div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="band-inner">
+    <p class="eyebrow" style="color:var(--gold-soft)"><span class="dot" aria-hidden="true"></span> Why it mattered</p>
+    <h2 style="max-width:30rem">Fabricated numbers on a credit licensee&rsquo;s website are not a copywriting problem.</h2>
+    <p class="lede" style="color:rgba(250,248,242,.72)">Approval rates and customer counts are representations. Invented testimonials are misleading conduct. A placeholder where a licence number belongs is a disclosure failure. None of it had been put there deliberately &mdash; it arrived with the template &mdash; but it was published, and it was live.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> The work</p>
+    <h2>Exposure first. Everything else after.</h2>
+  </div>
+  <div style="max-width:42rem">
+    <div class="phase">
+      <span class="when">Day one</span>
+      <h3>Take the exposure down</h3>
+      <p>Deletions only, no design work. The fabricated statistics, the three invented testimonials, the other company&rsquo;s name, the lorem ipsum, a line offering student lending they do not provide. Nothing here needed a decision &mdash; it needed removing, and it was gone the same afternoon.</p>
+    </div>
+    <div class="phase">
+      <span class="when">Week one</span>
+      <h3>Correct the disclosure and fix what was broken</h3>
+      <p>We traced the licensing chain properly &mdash; the licensee, the Australian Credit Licence, both credit representative numbers, AFCA and FBAA memberships &mdash; and verified every figure against the AFCA register and the client&rsquo;s own documents before publishing any of it. Then the contact form, which turned out to be a longer story.</p>
+    </div>
+    <div class="phase">
+      <span class="when">Weeks two to four</span>
+      <h3>Rebuild, rather than patch</h3>
+      <p>The template was fighting every change. We rebuilt the site by hand &mdash; eleven pages, no page builder, no plugin stack &mdash; with the copy written around what the business actually does: asset and equipment finance for sole traders, companies, trusts and partnerships.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-deep)">
+  <div class="section-head">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> The interesting bit</p>
+    <h2>The form said it worked. It did not.</h2>
+  </div>
+  <div class="prose">
+    <p>Every submission returned a success message. Nothing ever arrived. The obvious suspects &mdash; spam folder, wrong address, a misconfigured plugin &mdash; all came back clean.</p>
+    <p>The delivery log told the real story: <strong>zero records</strong>. The messages were not failing to deliver, they were never entering a queue that delivers. The domain&rsquo;s mail runs on Microsoft 365, but the web host was accepting mail for it locally and dropping it into a mailbox that did not exist. Mail routing was already set correctly; the host&rsquo;s own relay was swallowing the message anyway.</p>
+    <p>At that point the right call is to stop debugging someone else&rsquo;s mail server. We moved the enquiry pipeline onto an email API we could observe, on a dedicated sending subdomain so the client&rsquo;s Microsoft 365 configuration was never touched. Every enquiry is now written to disk <em>before</em> the send is attempted, so a delivery failure can never again cost them a lead silently.</p>
+  </div>
+</section>
+
+<section class="section band" style="padding-block:4.5rem">
+  <div class="band-inner">
+    <div class="band-facts">
+      <div class="fact"><b>11</b><span>pages rebuilt by hand</span></div>
+      <div class="fact"><b>8</b><span>legacy URLs redirected</span></div>
+      <div class="fact"><b>3</b><span>compliance documents published</span></div>
+      <div class="fact"><b>0</b><span>placeholders remaining</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Where it landed</p>
+    <h2>What the business has now.</h2>
+  </div>
+  <div class="prose">
+    <p>Eleven hand-built pages with a single H1 and a unique description each &mdash; previously there were none of either. Licensing disclosure that is correct and verified. A Credit Guide page, a complaints and dispute resolution page naming AFCA, and a privacy policy written for the site rather than borrowed from one.</p>
+    <p>Every address from the old site &mdash; eight of them &mdash; redirects permanently to its replacement, so no bookmark and no search result was lost on the day of the switch. The changeover itself took under an hour, with the previous site left intact and reversible in two steps for a fortnight afterwards.</p>
+    <p>And the enquiry form delivers, which it had not been doing for as long as anyone could establish.</p>
+    <p style="margin-top:2rem"><a class="app-link" href="https://purafinancegroup.com.au" target="_blank" rel="noopener">Visit purafinancegroup.com.au &#8599;</a></p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-deep);padding-block:4rem">
+  <div class="section-head" style="margin-bottom:2rem">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> The through-line</p>
+  </div>
+  <div class="prose">
+    <p style="font-family:'Marcellus',serif;font-size:1.3rem;line-height:1.55;font-weight:400;color:var(--ink);max-width:34rem">The brief said &ldquo;make some changes to the website&rdquo;. The job was a compliance audit that happened to end in a rebuild. Most engagements are like this &mdash; the brief describes the symptom.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2 style="max-width:24rem">Something on your site you are not sure about?</h2>
+    <p class="lede">If you have inherited a website and do not know what is in it, that is worth an hour of someone&rsquo;s attention before it is worth a redesign.</p>
+    <a class="btn-primary" href="/#contact">Start a conversation <span class="dot" aria-hidden="true">&#8599;</span></a>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="foot-brand">
+    <img src="/assets/crest.webp" alt="">
+    <span>Calibre Squad</span>
+  </div>
+  <span>&copy; 2026 Calibre Squad &middot; calibresquad.com.au</span>
+</footer>
+</body>
+</html>

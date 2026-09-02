@@ -3,40 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calibre Squad — Consultancy, Resources &amp; Digital Products</title>
-<meta name="description" content="Calibre Squad is a Western Australian consultancy providing advisory services, operational resources and purpose-built digital products. Empowering excellence.">
+<title>Work &mdash; Calibre Squad</title>
+<meta name="description" content="Selected client work from Calibre Squad: compliance-led websites, operational systems and purpose-built software, built in Perth, Western Australia.">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="canonical" href="https://calibresquad.com.au/">
+<link rel="canonical" href="https://calibresquad.com.au/work/">
 <meta name="theme-color" content="#FAF8F2">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Calibre Squad">
 <meta property="og:locale" content="en_AU">
-<meta property="og:title" content="Calibre Squad — Consultancy, Resources &amp; Digital Products">
-<meta property="og:description" content="Western Australian consultancy providing advisory services, operational resources and purpose-built apps. Empowering excellence, from advice to application.">
-<meta property="og:url" content="https://calibresquad.com.au/">
+<meta property="og:title" content="Work &mdash; Calibre Squad">
+<meta property="og:description" content="Selected client work from Calibre Squad: compliance-led websites, operational systems and purpose-built software, built in Perth, Western Australia.">
+<meta property="og:url" content="https://calibresquad.com.au/work/">
 <meta property="og:image" content="https://calibresquad.com.au/assets/og-crest.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@calibresquad">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Calibre Squad",
-  "url": "https://calibresquad.com.au/",
-  "logo": "https://calibresquad.com.au/assets/og-crest.png",
-  "email": "info@calibresquad.com.au",
-  "slogan": "Empowering excellence",
-  "address": {"@type": "PostalAddress", "addressLocality": "Perth", "addressRegion": "WA", "addressCountry": "AU"},
-  "sameAs": [
-    "https://x.com/calibresquad",
-    "https://www.instagram.com/calibresquad",
-    "https://www.reddit.com/user/Calibresquad"
-  ]
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -331,246 +312,107 @@ a.pill:hover{color:var(--navy);border-color:var(--navy)}
 }
 .social-row a:hover{color:var(--gold)}
 @media (max-width:860px){.apps-grid{grid-template-columns:1fr}}
+
+/* ---------- work / case study ---------- */
+.crumb{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:1.6rem}
+.crumb a{color:var(--steel);text-decoration:none;border-bottom:1px solid var(--hair)}
+.crumb a:hover{color:var(--navy)}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:1.6rem}
+.work-card{display:flex;flex-direction:column;gap:.9rem;border:1px solid var(--hair);
+  border-radius:2px;padding:2rem 1.8rem;background:#fff;transition:border-color .4s var(--ease),transform .4s var(--ease)}
+.work-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.work-card h3{font-family:'Marcellus',serif;font-size:1.35rem;font-weight:400;margin:0}
+.work-card p{font-size:.92rem;font-weight:300;color:var(--steel);margin:0;line-height:1.65}
+.work-card .app-link{margin-top:auto;padding-top:.8rem}
+.work-meta{display:flex;gap:.5rem;flex-wrap:wrap}
+.finding{border-top:1px solid var(--hair);padding:1.15rem 0;display:grid;
+  grid-template-columns:1.6rem 1fr;gap:0 1rem;align-items:start}
+.finding:last-child{border-bottom:1px solid var(--hair)}
+.finding .n{font-size:.7rem;letter-spacing:.1em;color:var(--gold);padding-top:.28rem}
+.finding b{display:block;font-weight:500;font-size:.98rem;margin-bottom:.28rem}
+.finding span.d{font-size:.88rem;font-weight:300;color:var(--steel);line-height:1.6}
+.phase{border-left:1px solid var(--hair);padding:0 0 2.2rem 1.9rem;position:relative}
+.phase:last-child{padding-bottom:0}
+.phase::before{content:"";position:absolute;left:-4.5px;top:.45rem;width:8px;height:8px;
+  border-radius:50%;background:var(--gold)}
+.phase h3{font-family:'Marcellus',serif;font-weight:400;font-size:1.2rem;margin:0 0 .5rem}
+.phase p{font-size:.93rem;font-weight:300;color:var(--steel);line-height:1.7;margin:0}
+.phase .when{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+.quote{border-left:2px solid var(--gold);padding:.2rem 0 .2rem 1.8rem;margin:0}
+.quote p{font-family:'Marcellus',serif;font-size:1.35rem;line-height:1.5;font-weight:400;margin:0 0 1rem}
+.quote cite{font-style:normal;font-size:.82rem;letter-spacing:.06em;color:var(--steel)}
+.prose p{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin:0 0 1.15rem;max-width:38rem}
+.prose p:last-child{margin-bottom:0}
+.prose strong{font-weight:500}
+@media(max-width:640px){.phase{padding-left:1.4rem}}
 </style>
 </head>
-<body>
-
+<body id="top">
 <nav class="nav" aria-label="Main">
   <div class="nav-pill">
-    <a class="nav-brand" href="#top" aria-label="Calibre Squad home">
+    <a class="nav-brand" href="/" aria-label="Calibre Squad home">
       <img src="/assets/crest.webp" alt="" width="30" height="30">
       <span>Calibre Squad</span>
     </a>
     <div class="nav-links">
-      <a href="#capabilities">What we do</a>
+      <a href="/#capabilities">What we do</a>
       <a href="/work/">Work</a>
-      <a href="#apps">Apps</a>
-      <a href="#about">About</a>
+      <a href="/#apps">Apps</a>
+      <a href="/#about">About</a>
     </div>
-    <a class="nav-cta" href="#contact">Get in touch <span class="dot" aria-hidden="true">↗</span></a>
+    <a class="nav-cta" href="/#contact">Get in touch <span class="dot" aria-hidden="true">&#8599;</span></a>
   </div>
 </nav>
 
-<header class="hero" id="top">
-  <div>
-    <p class="eyebrow reveal">Perth · Western Australia</p>
-    <h1 class="reveal">Empowering excellence, from <em>advice</em> to <em>application</em>.</h1>
-    <p class="lede reveal">Calibre Squad is a Western Australian consultancy. We advise organisations, build the operational resources they run on, and are now developing purpose-built apps that put that expertise to work.</p>
-    <div class="hero-actions reveal">
-      <a class="btn-primary" href="#contact">Start a conversation <span class="dot" aria-hidden="true">↗</span></a>
-      <a class="btn-ghost" href="#capabilities">See what we do</a>
-    </div>
-  </div>
-  <div class="hero-seal reveal">
-    <img src="/assets/crest.webp" alt="Calibre Squad crest — an eagle over a CS shield, encircled by the words Calibre Squad, Empowering Excellence">
-  </div>
+<main>
+<header class="hero" style="padding-block:9rem 5rem">
+  <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Selected work</p>
+  <h1>The work behind the standard.</h1>
+  <p class="lede">Every engagement below started as one thing and turned out to be another. That is usually the useful part &mdash; the brief describes the symptom, and the job is to find what is actually wrong.</p>
 </header>
 
-<main>
-  <section class="section" id="capabilities" aria-labelledby="cap-h">
-    <div class="section-head reveal">
-      <p class="eyebrow">Capabilities</p>
-      <h2 id="cap-h">Three ways we work</h2>
-      <p>Every engagement is grounded in the same standard: practical, precise, and built to hold up in the real world.</p>
-    </div>
-    <div class="ledger">
-      <div class="ledger-row reveal">
-        <span class="tag">Advisory</span>
-        <div>
-          <h3>Consultancy</h3>
-          <p>Hands-on advice for organisations that need clarity — from operational strategy and process design through to compliance and management systems that stand up to scrutiny.</p>
-        </div>
-        <span class="status">Established</span>
-      </div>
-      <div class="ledger-row reveal">
-        <span class="tag">Resources</span>
-        <div>
-          <h3>Resources &amp; documentation</h3>
-          <p>The working documents behind good operations: procedures, management systems, templates and reference material — written to be used, not filed away.</p>
-        </div>
-        <span class="status">Established</span>
-      </div>
-      <div class="ledger-row reveal">
-        <span class="tag">Digital</span>
-        <div>
-          <h3>Apps &amp; digital products</h3>
-          <p>Purpose-built software that turns our consulting and resource expertise into tools people use every day — designed around real operational workflows, not the other way round.</p>
-        </div>
-        <span class="status"><a class="pill" href="#apps">In beta · see the apps</a></span>
-      </div>
-    </div>
-  </section>
+<section class="section">
+  <div class="work-grid">
 
-  <section class="section" id="work" aria-labelledby="work-h" style="background:var(--paper-deep)">
-  <div class="section-head">
-    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Selected work</p>
-    <h2 id="work-h">The brief describes the symptom.</h2>
-    <p class="lede">Most engagements arrive as one thing and turn out to be another. Finding that out early is usually where the value is.</p>
-  </div>
-  <div class="apps-grid">
-    <article class="app-card">
-      <div class="app-card-top">
-        <span class="tag">Financial services</span>
-        <span class="status">Live</span>
-      </div>
+    <article class="work-card">
+      <div class="work-meta"><span class="tag">Financial services</span><span class="tag">Compliance &middot; Web</span></div>
       <h3>Pura Finance Group</h3>
-      <p>A Perth finance brokerage asked for changes to their website. It was still carrying a placeholder credit licence number, fabricated approval statistics and three testimonials that were never real. We cleared the exposure, then rebuilt.</p>
+      <p>A Perth asset finance brokerage asked for changes to their website. What they had was a purchased template still carrying a placeholder credit licence number, fabricated approval statistics and three testimonials that were never real. We cleared the exposure, then rebuilt.</p>
       <a class="app-link" href="/work/pura-finance-group/">Read the case study &#8594;</a>
     </article>
-    <article class="app-card">
-      <div class="app-card-top">
-        <span class="tag">All projects</span>
-      </div>
-      <h3>More of the work</h3>
-      <p>Compliance-led websites, operational systems and purpose-built software &mdash; the engagements behind the standard, and what each one actually turned out to be.</p>
-      <a class="app-link" href="/work/">See all work &#8594;</a>
+
+    <article class="work-card">
+      <div class="work-meta"><span class="tag">Heavy vehicle</span><span class="tag">Software &middot; In progress</span></div>
+      <h3>HVA Comply</h3>
+      <p>A WAHVA management system for Western Australian heavy-vehicle operators &mdash; pre-starts, fatigue, work diaries and audit-ready evidence in one place, with a driver app built for the cab rather than the office.</p>
+      <a class="app-link" href="/hva-comply/">See the product &#8594;</a>
     </article>
+
+    <article class="work-card">
+      <div class="work-meta"><span class="tag">Consumer</span><span class="tag">iOS &middot; Our own</span></div>
+      <h3>AuraMix</h3>
+      <p>A precision equaliser and audio toolkit for iPhone, iPad and Mac. Signature presets, a live 54-band spectrum and a player built around your own library. Designed and engineered in Perth.</p>
+      <a class="app-link" href="/auramix/">See the product &#8594;</a>
+    </article>
+
   </div>
 </section>
 
-<section class="section" id="apps" aria-labelledby="apps-h">
-    <div class="section-head reveal">
-      <p class="eyebrow">Apps</p>
-      <h2 id="apps-h">Built here. Used every day.</h2>
-      <p>Our first purpose-built apps — designed and engineered in Perth, shaped by the same standard as our consulting work.</p>
-    </div>
-    <div class="apps-grid">
-      <a class="app-card reveal" href="/auramix/">
-        <div class="app-card-top"><span class="tag">iOS · Audio</span><span class="pill">TestFlight beta</span></div>
-        <h3>AuraMix</h3>
-        <p>A precision equaliser and audio toolkit for iPhone, iPad and Mac — signature presets, a live 54-band spectrum, and a player built around your own library.</p>
-        <span class="app-link">Explore AuraMix <span aria-hidden="true">→</span></span>
-      </a>
-      <a class="app-card reveal" href="/hva-comply/">
-        <div class="app-card-top"><span class="tag">Web · Compliance</span><span class="pill">Early access</span></div>
-        <h3>HVA Comply</h3>
-        <p>A WAHVA management system for Western Australian heavy-vehicle operators — pre-starts, fatigue, work diaries and audit-ready evidence in one place.</p>
-        <span class="app-link">Explore HVA Comply <span aria-hidden="true">→</span></span>
-      </a>
-    </div>
-  </section>
-
-  <section class="band" id="about" aria-labelledby="about-h">
-    <img class="band-watermark" src="/assets/crest.webp" alt="" aria-hidden="true">
-    <div class="band-inner">
-      <div class="reveal">
-        <p class="eyebrow">About</p>
-        <h2 id="about-h">Small team. High standard. No shortcuts.</h2>
-        <p>Calibre Squad was built on a simple idea: the quality of the work should speak before we do. We keep our engagements focused, our advice honest, and our deliverables ready for the day they're needed — whether that's a boardroom, an audit, or an app store.</p>
-      </div>
-      <div class="band-facts reveal">
-        <div class="fact"><div class="k">Based in</div><div class="v">Perth, Western Australia</div></div>
-        <div class="fact"><div class="k">Focus</div><div class="v">Consultancy · Resources · Apps</div></div>
-        <div class="fact"><div class="k">Standard</div><div class="v">Empowering excellence</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact" aria-labelledby="contact-h">
-    <p class="eyebrow reveal" style="justify-content:center">Contact</p>
-    <h2 id="contact-h" class="reveal">Let's talk about what you're building.</h2>
-    <p class="reveal">Whether it's an engagement, a resource, or an idea for something digital — we'd like to hear about it.</p>
-    <form class="contact-form reveal" id="contact-form" novalidate>
-      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="form-row">
-        <div class="field">
-          <label for="cf-name">Your name</label>
-          <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Jordan Blake">
-        </div>
-        <div class="field">
-          <label for="cf-email">Your email</label>
-          <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com.au">
-        </div>
-      </div>
-      <div class="field">
-        <label for="cf-message">What can we help with?</label>
-        <textarea id="cf-message" name="message" required placeholder="Tell us about the engagement, the resource, or the idea — whatever you're working on."></textarea>
-      </div>
-      <div class="form-actions">
-        <button class="btn-primary" type="submit">Send message <span class="dot" aria-hidden="true">↗</span></button>
-        <span class="form-note">Or write to info@calibresquad.com.au</span>
-      </div>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-    </form>
-    <div class="social-row reveal">
-      <a href="https://x.com/calibresquad" target="_blank" rel="me noopener">X</a>
-      <a href="https://www.instagram.com/calibresquad" target="_blank" rel="me noopener">Instagram</a>
-      <a href="https://www.reddit.com/user/Calibresquad" target="_blank" rel="me noopener">Reddit</a>
-      <!-- Uncomment when these accounts exist:
-      <a href="https://www.youtube.com/@calibresquad" target="_blank" rel="me noopener">YouTube</a>
-      <a href="https://www.linkedin.com/company/calibre-squad" target="_blank" rel="me noopener">LinkedIn</a>
-      -->
-    </div>
-  </section>
+<section class="section band" style="padding-block:5rem">
+  <div class="band-inner">
+    <p class="eyebrow" style="color:var(--gold-soft)"><span class="dot" aria-hidden="true"></span> Working with us</p>
+    <h2 style="max-width:26rem">If the brief turns out to be wrong, we will say so.</h2>
+    <p class="lede" style="color:rgba(250,248,242,.72)">Most of the value in an engagement sits in the first week, before anything is designed or built. That is when the real problem surfaces &mdash; and it is rarely the one written on the brief.</p>
+    <a class="btn-primary" href="/#contact" style="background:var(--paper);color:var(--navy)">Start a conversation <span class="dot" aria-hidden="true">&#8599;</span></a>
+  </div>
+</section>
 </main>
-
 <footer>
   <div class="foot-brand">
     <img src="/assets/crest.webp" alt="">
     <span>Calibre Squad</span>
   </div>
-  <span>© 2026 Calibre Squad · calibresquad.com.au</span>
+  <span>&copy; 2026 Calibre Squad &middot; calibresquad.com.au</span>
 </footer>
-
-<script>
-(function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var els = document.querySelectorAll('.reveal');
-  if (reduced || !('IntersectionObserver' in window)) {
-    els.forEach(function(el){ el.classList.add('in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
-  els.forEach(function(el, i){
-    el.style.transitionDelay = Math.min(i%4*80, 240)+'ms';
-    io.observe(el);
-  });
-})();
-
-/* Contact form → relay service → info@calibresquad.com.au. No backend:
-   the site is static, so the form posts JSON and swaps in a confirmation. */
-(function(){
-  var form = document.getElementById('contact-form');
-  if (!form) return;
-  var status = document.getElementById('form-status');
-  var button = form.querySelector('button[type="submit"]');
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-
-    var payload = {};
-    new FormData(form).forEach(function(v, k){ payload[k] = v; });
-    payload._subject = 'Calibre Squad — message from the website';
-    payload._captcha = 'false';
-
-    button.disabled = true;
-    button.firstChild.nodeValue = 'Sending ';
-    status.className = 'form-status';
-    status.textContent = '';
-
-    fetch('https://formsubmit.co/ajax/info@calibresquad.com.au', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
-      body: JSON.stringify(payload)
-    }).then(function(res){
-      if (!res.ok) throw new Error(res.status);
-      var done = document.createElement('div');
-      done.className = 'form-done';
-      done.innerHTML = '<h3>Message sent.</h3><p>Thank you — we read every enquiry and will reply shortly.</p>';
-      form.replaceWith(done);
-    }).catch(function(){
-      button.disabled = false;
-      button.firstChild.nodeValue = 'Send message ';
-      status.textContent = "That didn't go through. Please email info@calibresquad.com.au directly.";
-    });
-  });
-})();
-</script>
-<script data-goatcounter="https://calibresquad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
