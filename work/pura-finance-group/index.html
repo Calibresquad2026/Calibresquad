@@ -114,8 +114,10 @@ html[data-t="mixed"] .top{background:var(--paper)}
 /* ground switch */
 .ground{display:flex;gap:0;border:1px solid var(--line)}
 .ground button{background:transparent;border:0;border-right:1px solid var(--line);
-  font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-  padding:.5rem .72rem;cursor:pointer;transition:background .25s ease,color .25s ease}
+  color:var(--muted);padding:.46rem .6rem;cursor:pointer;line-height:0;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .25s ease,color .25s ease}
+.ground button svg{display:block}
 .ground button:last-child{border-right:0}
 .ground button:hover{color:var(--ink)}
 .ground button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
@@ -230,9 +232,22 @@ footer{border-top:1px solid var(--line);padding:3rem 0 4rem;font-size:.8125rem;c
         <a href="/#contact">Contact</a>
       </nav>
       <div class="ground" role="group" aria-label="Page appearance">
-        <button type="button" data-g="light" aria-pressed="true">Light</button>
-        <button type="button" data-g="dark" aria-pressed="false">Dark</button>
-        <button type="button" data-g="mixed" aria-pressed="false">Mixed</button>
+        <button type="button" data-g="light" aria-pressed="true" aria-label="Light" title="Light">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false">
+            <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.35"/>
+          </svg>
+        </button>
+        <button type="button" data-g="dark" aria-pressed="false" aria-label="Dark" title="Dark">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false">
+            <circle cx="8" cy="8" r="6.2" fill="currentColor"/>
+          </svg>
+        </button>
+        <button type="button" data-g="mixed" aria-pressed="false" aria-label="Mixed" title="Mixed">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false">
+            <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.35"/>
+            <path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
