@@ -112,9 +112,6 @@ html[data-t="mixed"] .top{background:var(--paper)}
 .top nav{display:flex;gap:1.9rem}
 .top nav a{font-size:.8125rem;letter-spacing:.01em;text-decoration:none;color:var(--muted)}
 .top nav a:hover{color:var(--ink)}
-.top nav a.nav-page{padding-left:1.9rem;margin-left:-.2rem;position:relative}
-.top nav a.nav-page::before{content:"";position:absolute;left:0;top:50%;
-  transform:translateY(-50%);width:1px;height:1.05em;background:var(--line)}
 @media(max-width:820px){.top nav{display:none}}
 
 /* ground switch */
@@ -145,6 +142,9 @@ html[data-t="mixed"] .top{background:var(--paper)}
 .rr .st{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
   padding-top:.3rem;white-space:nowrap}
 .rr a.more{display:inline-block;margin-top:.9rem;font-size:.875rem}
+.tagmini{display:inline-block;margin-left:.65rem;font-size:.5938rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);border:1px solid var(--line);
+  padding:.2rem .48rem;vertical-align:.22em;white-space:nowrap}
 @media(max-width:820px){.rr{grid-template-columns:1fr;gap:.7rem}.rr .st{padding-top:0}}
 
 .finding{display:grid;grid-template-columns:3.2rem 1fr;gap:0 1.6rem;
@@ -234,10 +234,10 @@ footer{border-top:1px solid var(--line);padding:3rem 0 4rem;font-size:.8125rem;c
     <div class="top-right">
       <nav>
         <a href="/#capabilities">What we do</a>
+        <a href="/#work">Work</a>
         <a href="/#apps">Apps</a>
         <a href="/#about">About</a>
         <a href="/#contact">Contact</a>
-        <a class="nav-page" href="/work/">Work</a>
       </nav>
       <div class="ground" role="group" aria-label="Page appearance">
         <button type="button" data-g="light" aria-pressed="true" aria-label="Light" title="Light">
