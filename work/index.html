@@ -215,17 +215,19 @@ html[data-t="mixed"] .tint .crest{filter:brightness(0) invert(1)}
 .brandmark{display:inline-flex;align-items:center;gap:.62rem}
 .brandmark .crest{width:30px;height:30px;flex:none}
 
-/* watermark - right-aligned to the content column, fully on the page */
-.marked{position:relative;overflow:hidden}
-.marked > .wrap{position:relative;z-index:1}
-.mark-hold{position:absolute;inset:0;pointer-events:none;z-index:0}
-.mark-bg{position:absolute;top:50%;right:clamp(.9rem,2.6vw,3.2rem);
-  transform:translateY(-50%);
-  width:min(42vw,29rem);height:auto;opacity:.105;
-  filter:brightness(0);transition:filter .5s ease,opacity .5s ease}
-html[data-t="dark"] .mark-bg{filter:brightness(0) invert(1);opacity:.13}
-html[data-t="mixed"] .tint .mark-bg{filter:brightness(0) invert(1);opacity:.13}
-@media(max-width:820px){.mark-bg{width:56vw;right:.9rem;opacity:.075;top:auto;bottom:6%;transform:none}}
+/* split hero - copy one side, crest the other, a rule between */
+.hero-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.58fr);
+  gap:clamp(2rem,5vw,4.6rem);align-items:center}
+.hero-seal{align-self:stretch;display:flex;align-items:center;justify-content:center;
+  border-left:1px solid var(--line);padding-left:clamp(2rem,5vw,4.6rem)}
+.hero-seal .crest{width:min(100%,19rem);height:auto;opacity:.95}
+@media(max-width:820px){
+  .hero{padding-block:clamp(3.2rem,9vw,5rem) clamp(3.5rem,7vw,6.5rem)}
+  .hero-split{grid-template-columns:1fr;gap:clamp(2rem,6vw,2.6rem)}
+  .hero-seal{border-left:0;border-top:1px solid var(--line);
+    padding-left:0;padding-top:clamp(2rem,6vw,2.6rem)}
+  .hero-seal .crest{width:min(46vw,12rem)}
+}
 
 footer{border-top:1px solid var(--line);padding:3rem 0 4rem;font-size:.8125rem;color:var(--muted)}
 .foot-in{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:center}
@@ -267,12 +269,14 @@ footer{border-top:1px solid var(--line);padding:3rem 0 4rem;font-size:.8125rem;c
   </div>
 </header>
 
-<section class="hero marked">
-  <div class="mark-hold" aria-hidden="true"><img class="mark-bg" src="/assets/crest.webp" alt=""></div>
-  <div class="wrap">
+<section class="hero">
+  <div class="wrap hero-split">
+    <div class="hero-copy">
     <p class="kicker rv">Selected work</p>
     <h1 class="rv">The work behind the standard.</h1>
     <p class="lede rv">Every engagement below started as one thing and turned out to be another. That is usually the useful part.</p>
+  </div>
+    <div class="hero-seal" aria-hidden="true"><img class="crest" src="/assets/crest.webp" alt="" width="360" height="360"></div>
   </div>
 </section>
 
