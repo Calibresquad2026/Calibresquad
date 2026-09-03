@@ -148,6 +148,13 @@ html[data-t="mixed"] .top{background:var(--paper)}
 .rr .st{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
   padding-top:.3rem;white-space:nowrap}
 .rr a.more{display:inline-block;margin-top:.9rem;font-size:.875rem}
+.rr .links{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .95rem;margin-top:.9rem}
+.rr .links a.more{margin-top:0}
+.rr .links .sep{color:var(--line);font-size:.875rem;user-select:none}
+.visit{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
+  border:1px solid var(--line);padding:.8rem 1.25rem;font-size:.8125rem;
+  color:var(--ink);transition:background .25s ease,color .25s ease,border-color .25s ease}
+.visit:hover,.visit:focus-visible{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .tagmini{display:inline-block;margin-left:.65rem;font-size:.5938rem;letter-spacing:.15em;
   text-transform:uppercase;color:var(--muted);border:1px solid var(--line);
   padding:.2rem .48rem;vertical-align:.22em;white-space:nowrap}
@@ -331,7 +338,7 @@ footer{border-top:1px solid var(--line);padding:3rem 0 4rem;font-size:.8125rem;c
           <div>
             <h3>Pura Finance Group <span class="tagmini">Case study</span></h3>
             <p>A Perth finance brokerage asked for changes to their website. It was still carrying a placeholder credit licence number, fabricated approval statistics and three testimonials that were never real. We cleared the exposure, then rebuilt.</p>
-            <a class="more" href="/work/pura-finance-group/">Read the case study &#8594;</a>
+            <div class="links"><a class="more" href="/work/pura-finance-group/">Read the case study &#8594;</a><span class="sep" aria-hidden="true">&middot;</span><a class="more" href="https://purafinancegroup.com.au" target="_blank" rel="noopener">Visit the live site &#8599;</a></div>
           </div>
           <span class="st">2026</span>
         </div>
