@@ -149,6 +149,21 @@ html[data-t="mixed"] .top{background:var(--paper)}
   padding-top:.3rem;white-space:nowrap}
 .rr a.more{display:inline-block;margin-top:.9rem;font-size:.875rem}
 .rr .links{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .95rem;margin-top:.9rem}
+/* client testimonial - a quote, not a card: one hairline and the display face */
+.tmo{margin:0;display:flex;flex-direction:column;gap:1.15rem;
+  border-left:2px solid var(--line);padding-left:clamp(1.15rem,3vw,2.1rem)}
+.tmo p{font-family:var(--fd);font-weight:var(--dw);font-optical-sizing:auto;
+  font-size:clamp(1.08rem,1.75vw,1.32rem);line-height:1.55;letter-spacing:-.005em;
+  color:var(--ink);margin:0;max-width:58ch}
+.tmo-by{display:flex;flex-direction:column;gap:.1rem;margin-top:.35rem}
+.tmo-name{font-size:.9rem;font-weight:600;color:var(--ink)}
+.tmo-org{font-size:.6875rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+/* the pulled line on the work card */
+.rr-quote{font-family:var(--fd);font-weight:var(--dw);font-size:1.02rem;line-height:1.5;
+  color:var(--ink);margin:.85rem 0 0;max-width:46ch;
+  display:flex;flex-direction:column;gap:.3rem}
+.rr-quote span{font-family:var(--ft);font-size:.6875rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .rr .links a.more{margin-top:0}
 .rr .links .sep{color:var(--line);font-size:.875rem;user-select:none}
 .visit{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
