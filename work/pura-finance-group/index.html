@@ -158,6 +158,9 @@ html[data-t="mixed"] .top{background:var(--paper)}
 .tmo-by{display:flex;flex-direction:column;gap:.1rem;margin-top:.35rem}
 .tmo-name{font-size:.9rem;font-weight:600;color:var(--ink)}
 .tmo-org{font-size:.6875rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+/* the client's own mark, desaturated so it sits inside the monochrome scheme */
+.client-mark{display:block;width:9rem;max-width:100%;height:auto;margin-top:1.05rem;opacity:.9}
+html[data-t="dark"] .client-mark{filter:invert(1);opacity:.85}
 /* the pulled line on the work card */
 .rr-quote{font-family:var(--fd);font-weight:var(--dw);font-size:1.02rem;line-height:1.5;
   color:var(--ink);margin:.85rem 0 0;max-width:46ch;
@@ -408,7 +411,7 @@ footer{border-top:1px solid var(--line);padding:3rem 0 4rem;font-size:.8125rem;c
 
 <section>
   <div class="wrap row rv">
-    <div class="label">In the client&rsquo;s words</div>
+    <div class="label">In the client&rsquo;s words<img class="client-mark" src="/assets/pura-logo-mono.png" alt="Pura Finance Group" width="404" height="135" loading="lazy"></div>
     <div class="col">
       <blockquote class="tmo">
         <p>Absolutely fantastic work! I&rsquo;m extremely happy with the website that was created for my company &ldquo;Pura Finance&rdquo;. It looks modern, professional, and very impressive, while also being easy to use and highly functional. The website handles customer enquiries smoothly and keeps me updated, which makes managing everything much easier. The attention to detail and overall quality exceeded my expectations.</p>
